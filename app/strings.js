@@ -1,3 +1,4 @@
+/*eslint-disable*/
 stringsAnswers = {
   /**
    * Reduces a string by removing letters that repeat more than amount times.
@@ -10,7 +11,8 @@ stringsAnswers = {
    * @returns {String} A string with no more than amount number of repeated letters.
    */
   reduceString: function reduceString(str, amount) {
-
+    return str.match(/(.)\1*/g).map(el => el.length <= amount ? el : el.slice(0,amount)).join('');
+    ;
   },
 
   /**
@@ -22,6 +24,6 @@ stringsAnswers = {
    * @returns {String} The original string of text str reversed.
    */
   reverseString: function reverseString(str) {
-
+    return str.split('').reverse().join('');
   },
 };

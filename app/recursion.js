@@ -1,3 +1,4 @@
+/*eslint-disable*/
 recursionAnswers = {
   /**
    * List the files in a given directory, of a filesystem described by data.
@@ -17,7 +18,7 @@ recursionAnswers = {
    * @returns {Number[]} The files under the directory dirName, including subdiretories.
    */
   listFiles: function listFiles(data, dirName) {
-
+    
   },
 
   /**
@@ -30,6 +31,6 @@ recursionAnswers = {
    * @returns {Number} The nth fibonacci number
    */
   fibonacci: function fibonacci(n) {
-
+    return n < 2 ? n : fibonacci(n-1) + fibonacci(n-2);
   },
 };
