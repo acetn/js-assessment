@@ -1,4 +1,5 @@
 /*eslint-disable*/
+
 asyncAnswers = {
   /**
    * Asynchronously returns a value via a promise. Example:
@@ -22,6 +23,13 @@ asyncAnswers = {
    * @returns {then: function} A promise like object containing a then property.
    */
   manipulateRemoteData: function manipulateRemoteData(url) {
-    // return fetch(url).then();
+    return fetch(url)
+      .then(function(response){return response.json(); })
+      .then(function(data){
+        var names = response.people.map(function(item) {
+          return item.name;
+        });
+        return names.sort();
+      });
   },
 };
